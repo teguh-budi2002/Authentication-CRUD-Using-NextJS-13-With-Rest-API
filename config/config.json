@@ -1,7 +1,7 @@
 {
   "development": {
-      "username": "debian-sys-maint",
-      "password": "nqstnSi3ksBEBa32",
+      "username": "root",
+      "password": "",
       "database": "auth_nextjs",
       "host": "127.0.0.1",
       "dialect": "mysql",
