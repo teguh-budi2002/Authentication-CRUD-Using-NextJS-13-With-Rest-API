@@ -15,5 +15,6 @@ export default async function UpdateController(req, res) {
   res.status(200);
   res.json({
     message: "Post Updated Successfully",
+    status: 200,
   });
 }

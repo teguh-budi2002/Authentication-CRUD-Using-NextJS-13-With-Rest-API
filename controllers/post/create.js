@@ -9,5 +9,5 @@ export default async function createController(req, res) {
   const isCreated = await Post.create({ title, slug, description });
 
   res.status(201);
-  res.json({ message: "Post Created Successfully" });
+  res.json({ message: "Post Created Successfully", status: 201 });
 }

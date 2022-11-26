@@ -27,3 +27,26 @@ a {
     background: black;
   }
 }
+
+.alert_box {
+  z-index: 99999;
+  position: fixed;
+  top: 40px;
+  right: -30%;
+  animation: showing 3s ease-in-out backwards;
+}
+
+@keyframes showing {
+  0% {
+    right: -30%;
+  }
+  10% {
+    right: 0%;
+  }
+  90% {
+    right: 0%;
+  }
+  100% {
+    right: -30%;
+  }
+}

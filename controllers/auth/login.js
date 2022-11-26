@@ -13,29 +13,31 @@ export default async function LoginController(req, res) {
     });
 
     const checkUser = await bcrypt.compare(password, getUser.password);
-
     if (checkUser) {
       const signedIn = jwt.sign(
         { data: checkUser },
         "iniPrivateKey",
-        { expiresIn: "7d" },
+        { expiresIn: 360000000 },
         (err, token) => {
           res.status(200);
           res.json({
             message: "Login Successfully",
             token: token,
+            status: 200,
           });
         }
       );
     } else {
-      res.status(404);
+      res.status(401);
       res.json({
-        message: "Data Tidak Ditemukan",
+        message: "Email or Password Is Wrong.",
+        status: 401,
       });
     }
   } catch (error) {
     res.status(404).json({
-      message: "Data Tidak Ditemukan.",
+      message: "Your Data Is Invalid.",
+      status: 404,
     });
   }
 }
